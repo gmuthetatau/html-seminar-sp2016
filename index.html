@@ -1,7 +1,10 @@
 <!doctype html>
 <html ng-app>
   <head>
+    <meta charset="utf-8">
     <title>So, you wanna build a website?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -18,8 +21,11 @@
       <div class="col-md-6 col-md-offset-3">
         <h1>So, you wanna build a website?</h1>
         <section>
+          <p>Enter your NetID, and we'll customize this tutorial for you!</p>
+          <p>
           <label>NetID:</label>
           <input type="text" ng-model="netid" placeholder="Enter your NetID here">
+          </p>
         </section>
         <section>
           <h3 class="sectiontitle">Step 1. Connect to the Mason server</h3>
@@ -27,21 +33,93 @@
           <p>When you visit a website, your browser downloads a special file called an "HTML" file and displays it. In this class, we will be creating these files and transfering them to the Mason server. Once you do this, you will be able to visit <a href="http://mason.gmu.edu/~{{netid}}/">http://mason.gmu.edu/~{{netid}}/</a> and see your webpage!</p>
           <p>So we need to start by learning how to transfer files to the Mason server.</p>
           <h4>Step 1a. Microsoft Windows</h4>
-          <p>If you're using Microsoft Windows, you will need to download a program to transfer files to the Mason server. We suggest that you download and install <a href="https://cyberduck.io/">Cyberduck</a>.</p>
+          <p>If you're using Microsoft Windows, you will need to download a
+          program to transfer files to the Mason server. We suggest that you
+          download and install <a href="https://cyberduck.io/">Cyberduck</a>.
+          Then follow the instructions in Step 1b. </p>
           <h4>Step 1b. Apple Macintosh OS X</h4>
-          <p>If you're using Apple Macintosh OS X, you will need to download a program to transfer files to the Mason server. We suggest that you download and install <a href="https://cyberduck.io/">Cyberduck</a>. (NOTE: We know that OS X comes with the <code>scp</code> program for transfering files via the Terminal.)</p>
+          <p>If you're using Apple Macintosh OS X, you will need to download a
+          program to transfer files to the Mason server. We suggest that you
+          download and install <a href="https://cyberduck.io/">Cyberduck</a>.
+          (NOTE: OS X already comes with the <code>scp</code> and
+          <code>sftp</code> terminal programs built-in which can perform the
+          exact same functionality as Cyberduck, without the easy-to-use
+          graphical interface.)</p>
           <p>Once you've installed Cyberduck, open Cyberduck.</p>
-          <img src="img/mac/1.jpg" />
+          <p><img src="img/mac/1.jpg" class="img-responsive center-block" /></p>
           <p>Click <strong>Open Connection</strong>, and make sure <strong>SFTP (SSH File Transfer Protocol)</strong> is selected from the dropdown. In the box for <strong>Server</strong>, enter <code>mason.gmu.edu</code> and make sure the <strong>Port</strong> is 22. In the box labeled <strong>Username</strong>, enter '{{netid}}' without the single quotes. Enter your GMU Password in the box labeled <strong>Password</strong>. If you've forgotten your password, you can <a href="https://password.gmu.edu/">reset your Patriot Pass password</a>. Once you've verified that your information is correct, click <strong>Connect</strong>.</p>
-          <img src="img/mac/2.jpg" />
-          <p></p>
-          <img src="img/mac/3.jpg" />
-          <img src="img/mac/4.jpg" />
-          <img src="img/mac/5.jpg" />
+          <p><img src="img/mac/2.jpg" class="img-responsive center-block" /></p>
           <h4>Step 1c. Linux</h4>
-          <p>If you're using Linux, you probably have everything you need already!</p>
+          <p>If you're using Linux, you probably have everything you need already! Like OS X, the terminal programs <code>scp</code> and <code>sftp</code> are built-in and can perform the exact same functionality without an easy-to-use graphical interface. Unlike OS X however, the graphical interface is built in to most modern Linux distributions.</p>
           <p>Open Files, and click <strong>File</strong> > <strong>Connect to Server</strong>.</p>
-          <p>In the Server Address box, type <code>sftp://{{netid}}@mason.gmu.edu/home/{{netid}}</code> and click <strong>Connect</strong>.</p>
+          <p><img src="img/lin/1.png" class="img-responsive center-block" /></p>
+          <p><img src="img/lin/2.png" class="img-responsive center-block" /></p>
+          <p>Your dialog may only have a single box for the <strong>Server Address</strong>. If so, type <code>sftp://{{netid}}@mason.gmu.edu/home/{{netid}}</code> in the <strong>Server Address</strong> box and click <strong>Connect</strong>. It will ask you for your GMU password. If you've forgotten your password, you can <a href="https://password.gmu.edu">reset your Patriot Pass password</a>.</p>
+          <p><img src="img/lin/3.png" class="img-responsive center-block" /></p>
+          <p>If succesful, it should look like the following. If this is your first time logging into the Mason cluster, you might not have any files there. If there is an error that the folder does not exist, <a data-scroll href="#u1">skip ahead</a> to solve your issue.</p>
+          <p><img src="img/lin/4.png" class="img-responsive center-block" /></p>
+          <p>Depending on your Linux distribution, your dialog box may look slightly different, but generally make sure it matches these settings. In the <strong>Server</strong> box, type <code>mason.gmu.edu</code>. Make sure the <strong>Type</strong> is <code>SSH</code> or <code>SFTP</code>, and the <strong>Port</strong> is <code>22</code>. If there is a <strong>Path</strong> or <strong>Folder</strong> option, leave it blank. Set the <strong>User name</strong> to '{{netid}}' and your <strong>Password</strong> to your GMU password. If you've forgotten your password, you can <a href="https://password.gmu.edu">reset your Patriot Pass password</a>. Remember that this is the same username and password that you use for PatriotWeb.</p>
+          <p><img src="img/lin/connect.png" class="img-responsive center-block" /></p>
+          <p><a id="u1" name="u1"></a>Once you've connected, you may see a bunch of folders (like in the following image), it is because your SFTP client could not figure out where your home directory is by default, and it placed you at the root directory of the entire Mason cluster.</p>
+          <p><img src="img/lin/root_dir.png" class="img-responsive center-block" /></p>
+          <p>If this is the case, you may need to manually find your home directory. In the address bar, try setting the path to <code>/home/u1/{{netid}}/</code> (if your dialog only has <strong>Server Address</strong>, input <code>sftp://{{netid}}@mason.gmu.edu/home/u1/{{netid}}/</code>).</p>
+          <div class="row">
+          <p class="col-md-6"><img src="img/lin/3.png" class="img-responsive center-block" /></p>
+          <p class="col-md-6"><img src="img/lin/home_dir.png" class="img-responsive center-block" /></p>
+          </div>
+          <p> If this doesn't work, try using <code>/home/<strong>u2</strong>/{{netid}}/</code>. Keep trying from <code>u1</code> all the way up through <code>u5</code>. This is because Mason uses a strange partition for user home directories&emdash;on a normal system, it should just be <code>/home/{{netid}}/</code>.) Once you don't get an error, you should see the files in your home directory&emdash;if this is your first time logging into the Mason cluster, keep in mind you that probably don't have any files yet.</p>
+        </section>
+        <section>
+            <h3 class="sectiontitle">Step 1.5. Setting up your home directory</h3>
+            <p>Now that you're logged into your account on the Mason cluster,
+            we need to ensure that your home directory is set up properly to
+            host a web page.</p>
+
+            <p>In order to serve HTML files to your public webpage, Mason
+            relies on the existence of a directory named
+            <code>public_html</code> inside
+            your home directory. To create this directory, right click in the
+            Cyberduck window and select <strong>New Folder</strong>, then type
+            <code>public_html</code>.</p>
+
+            <p><img class="img-responsive" src="img/mac/public_html.png" /></p>
+
+            <p>Within this directory you will place all the HTML files that you
+            want people to be able to see, including the ones we make during
+            this class. Let's go ahead and make a test homepage.</p>
+
+            <p>Open a basic text editor (<u>notepad</u>
+            on Windows, <u>TextEdit</u> on Mac, or <u>gedit</u> on Linux)
+            and create a new file. 
+            In this file, type whatever you want - keep it short for now, such
+            as your name, or a sentence. Then save the file with the name
+            <code>index.html</code>. This is a magic file name that the web
+            server on Mason expects to see when your home page is loaded.</p>
+            <p>
+            <div class="alert alert-warning" role="alert">
+              <strong>Warning!</strong> On Windows, you must select <strong>File</strong> &gt; <strong>Save As...</strong> and select <u>All Files (*)</u> from the drop-down list at the bottom of the dialog box, then enter <strong>index.html</strong> as the file name. On Mac using TextEdit, make sure <strong>File Format</strong> is set to <strong>Web Page (.html)</strong> and enter <code>index</code> in the <strong>Save As:</strong> field.<br /> Failure to follow those steps may result in a file with a name like <code>index.html.txt</code>, which will not be loaded correctly.
+            </div>
+
+            </p>
+            <p><img class="img-responsive center-block" src="img/win/save_as.png" /></p>
+            <p><img class="img-responsive" src="img/mac/save_as.png" /></p>
+
+            <p>Now we're going to upload the file you made to your home
+            directory on Mason, inside the <code>public_html</code> directory
+            we made earlier. To do that, simply drag the file from wherever you
+            saved it on your local computer to inside your SFTP window,
+            ensuring it lands inside the <code>public_html</code> folder.</p>
+
+            <p><img class="img-responsive" src="img/mac/upload.png" /></p>
+
+            <p>Now let's open a browser and visit your new <a href="http://mason.gmu.edu/~{{netid}}">website</a>. The URL is <a href="http://mason.gmu.edu/~{{netid}}"><code>mason.gmu.edu/~{{netid}}</code></a></p>
+
+            <div class="alert alert-warning" role="alert">
+            <p>If you are setting up web access for the first time, you may get an error page <strong>403 Forbidden</strong>. If this is the case, it is because the <code>public_html</code> directory you created had its permissions set by default to disallow others from viewing the files inside. To fix this in Cyberduck, right-click on the <code>public_html</code> folder and click <strong>Info</strong>. Then click the <strong>Permissions</strong> tab at the top of the window. Your permissions should be set to <em>Read</em>, <em>Write</em> and <em>Execute</em> for <strong>Owner</strong>, and <em>Execute</em> for <strong>Group</strong> and <strong>Others</strong>. The <em>Execute</em> permission flag enables other people to list the files in your <code>public_html</code> directory. You do NOT want <em>Write</em> permissions for <strong>Group</strong> or <strong>Other</strong>; otherwise, anyone would be able to modify your files!  To verify you have the correct permissions, check that the <strong>Unix Permissions</strong> box reads <em>711</em> or <em>755</em>. Once you have the correct permissions, refresh the page in your internet browser, and the error should go away.</p>
+            <p><img src="img/mac/permissions.png" class="img-responsive" /></p>
+            <p>If everything is correct, you should see the text that you typed into your <code>index.html</code> file in your browser.</p>
+            </div>
+            <p> Congratulations! You are now ready to make your own website on the Mason cluster!  </p>
         </section>
         <section>
           <h3 class="sectiontitle">Step 2. Basic HTML</h3>
@@ -97,10 +175,12 @@
       </div>
     </div>
     <script type="text/javascript" src="http://lou.wtf/cheet.js/bower_components/cheet.js/cheet.js"></script>
+    <script type="text/javascript" src="http://cferdinandi.github.io/smooth-scroll/dist/js/smooth-scroll.js"></script>
     <script>
       cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
         alert('You entered the Konami code!');
       });
+      smoothScroll.init();
     </script>
   </body>
 </html>
