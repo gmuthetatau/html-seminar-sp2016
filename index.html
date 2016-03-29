@@ -20,6 +20,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1>So, you wanna build a website?</h1>
+        <hr />
         <section>
           <p>Enter your NetID, and we'll customize this tutorial for you!</p>
           <p>
@@ -28,16 +29,37 @@
           </p>
         </section>
         <section>
-          <h3 class="sectiontitle">Step 1. Connect to the Mason server</h3>
+          <h3>Table of Contents</h3>
+          <ol>
+            <li><a data-scroll href="#step1">Connect to the Mason server</a></li>
+            <ol>
+              <li><a data-scroll href="#step1a">Microsoft Windows</a></li>
+              <li><a data-scroll href="#step1b">Apple Macintosh OS X</a></li>
+              <li><a data-scroll href="#step1c">Linux</a></li>
+              <li><a data-scroll href="#step15">Setting Up Your Home Directory</a></li>
+            </ol>
+            <li><a data-scroll href="#step2">Basic HTML<a/></li>
+            <ol>
+              <li><a data-scroll href="#step2a">Basic Structure of an HTML File</a></li>
+              <li><a data-scroll href="#step2b">HTML Tags</a></li>
+              <li><a data-scroll href="#step2c">Paragraphs</a></li>
+              <li><a data-scroll href="#step2d">Breaking up your Content using Header Tags</a></li>
+              <li><a data-scroll href="#step2e">Lists</a></li>
+            </ol>
+          </ol>
+        </section>
+        <hr />
+        <section>
+          <h3 name="step1" id="step1" class="sectiontitle">Step 1. Connect to the Mason server</h3>
           <p>This is probably the hardest part of tonight. If you can get past this, the rest of this will be a breeze!</p>
           <p>When you visit a website, your browser downloads a special file called an "HTML" file and displays it. In this class, we will be creating these files and transfering them to the Mason server. Once you do this, you will be able to visit <a href="http://mason.gmu.edu/~{{netid}}/">http://mason.gmu.edu/~{{netid}}/</a> and see your webpage!</p>
           <p>So we need to start by learning how to transfer files to the Mason server.</p>
-          <h4>Step 1a. Microsoft Windows</h4>
+          <h4 name="step1a" id="step1a">Step 1a. Microsoft Windows</h4>
           <p>If you're using Microsoft Windows, you will need to download a
           program to transfer files to the Mason server. We suggest that you
           download and install <a href="https://cyberduck.io/">Cyberduck</a>.
           Then follow the instructions in Step 1b. </p>
-          <h4>Step 1b. Apple Macintosh OS X</h4>
+          <h4 name="step1b" id="step1b">Step 1b. Apple Macintosh OS X</h4>
           <p>If you're using Apple Macintosh OS X, you will need to download a
           program to transfer files to the Mason server. We suggest that you
           download and install <a href="https://cyberduck.io/">Cyberduck</a>.
@@ -49,7 +71,7 @@
           <p><img src="img/mac/1.jpg" class="img-responsive center-block" /></p>
           <p>Click <strong>Open Connection</strong>, and make sure <strong>SFTP (SSH File Transfer Protocol)</strong> is selected from the dropdown. In the box for <strong>Server</strong>, enter <code>mason.gmu.edu</code> and make sure the <strong>Port</strong> is 22. In the box labeled <strong>Username</strong>, enter '{{netid}}' without the single quotes. Enter your GMU Password in the box labeled <strong>Password</strong>. If you've forgotten your password, you can <a href="https://password.gmu.edu/">reset your Patriot Pass password</a>. Once you've verified that your information is correct, click <strong>Connect</strong>.</p>
           <p><img src="img/mac/2.jpg" class="img-responsive center-block" /></p>
-          <h4>Step 1c. Linux</h4>
+          <h4 name="step1c" id="step1c">Step 1c. Linux</h4>
           <p>If you're using Linux, you probably have everything you need already! Like OS X, the terminal programs <code>scp</code> and <code>sftp</code> are built-in and can perform the exact same functionality without an easy-to-use graphical interface. Unlike OS X however, the graphical interface is built in to most modern Linux distributions.</p>
           <p>Open Files, and click <strong>File</strong> > <strong>Connect to Server</strong>.</p>
           <p><img src="img/lin/1.png" class="img-responsive center-block" /></p>
@@ -70,7 +92,7 @@
           <p> If this doesn't work, try using <code>/home/<strong>u2</strong>/{{netid}}/</code>. Keep trying from <code>u1</code> all the way up through <code>u5</code>. This is because Mason uses a strange partition for user home directories&emdash;on a normal system, it should just be <code>/home/{{netid}}/</code>.) Once you don't get an error, you should see the files in your home directory&emdash;if this is your first time logging into the Mason cluster, keep in mind you that probably don't have any files yet.</p>
         </section>
         <section>
-            <h3 class="sectiontitle">Step 1.5. Setting up your home directory</h3>
+            <h3 name="step15" id="step15" class="sectiontitle">Step 1.5. Setting up your home directory</h3>
             <p>Now that you're logged into your account on the Mason cluster,
             we need to ensure that your home directory is set up properly to
             host a web page.</p>
@@ -122,13 +144,13 @@
             <p> Congratulations! You are now ready to make your own website on the Mason cluster!  </p>
         </section>
         <section>
-          <h3 class="sectiontitle">Step 2. Basic HTML</h3>
-          <h4>Basic Structure of an HTML File</h4>
-          <h4>HTML Tags</h4>
-          <h4>Paragraphs</h4>
-          <h4>Breaking up your Content using Header Tags</h4>
-          <h4>Linking to Other Files</h4>
-          <h4>Lists</h4>
+          <h3 name="step2" id="step2" class="sectiontitle">Step 2. Basic HTML</h3>
+          <h4 name="step2a" id="step2a">Basic Structure of an HTML File</h4>
+          <h4 name="step2b" id="step2b">HTML Tags</h4>
+          <h4 name="step2c" id="step2c">Paragraphs</h4>
+          <h4 name="step2d" id="step2d">Breaking up your Content using Header Tags</h4>
+          <h4 name="step2e" id="step2e">Linking to Other Files</h4>
+          <h4 name="step2f" id="step2f">Lists</h4>
           <div class="row">
             <div class="col-md-3">
               <img src="http://s3.amazonaws.com/lyah/list.png" />
