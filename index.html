@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <title>So, you wanna build a website?</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>So, you wanna build a website?</h1>
+        <section>
+          <h3 class="sectiontitle">Step 1. Connect to the Mason server</h3>
+          <p>This is probably the hardest part of tonight. If you can get past this, the rest of this will be a breeze!</p>
+          <p>When you visit a website, your browser downloads a special file called an "HTML" file and displays it. In this class, we will be creating these files and transfering them to the Mason server. Once you do this, you will be able to visit <a href="http://mason.gmu.edu/~netid/">http://mason.gmu.edu/~netid/</a> and see your webpage!</p>
+          <p>So we need to start by learning how to transfer files to the Mason server.</p>
+          <h4>Step 1a. Microsoft Windows</h4>
+          <p>If you're using Microsoft Windows, you will need to download a program to transfer files to the Mason server. We suggest that you download and install <a href="https://cyberduck.io/">Cyberduck</a>.</p>
+          <h4>Step 1b. Apple Macintosh OS X</h4>
+          <p>If you're using Apple Macintosh OS X, you will need to download a program to transfer files to the Mason server. We suggest that you download and install <a href="https://cyberduck.io/">Cyberduck</a>. (NOTE: We know that OS X comes with the <code>scp</code> program for transfering files via the Terminal.)</p>
+          <p>Once you've installed Cyberduck, open Cyberduck.</p>
+          <img src="img/mac/1.jpg" />
+          <p>Click <strong>Open Connection</strong>, and make sure <strong>SFTP (SSH File Transfer Protocol)</strong> is selected from the dropdown. In the box for <strong>Server</strong>, enter <code>mason.gmu.edu</code> and make sure the <strong>Port</strong> is 22. In the box labeled <strong>Username</strong>, enter your NetID. Enter your GMU Password in the box labeled <strong>Password</strong>. If you've forgotten your password, you can <a href="https://password.gmu.edu/">reset your Patriot Pass password</a>. Once you've verified that your information is correct, click <strong>Connect</strong>.</p>
+          <img src="img/mac/2.jpg" />
+          <p></p>
+          <img src="img/mac/3.jpg" />
+          <img src="img/mac/4.jpg" />
+          <img src="img/mac/5.jpg" />
+          <h4>Step 1c. Linux</h4>
+          <p>If you're using Linux, you probably have everything you need already!</p>
+          <p>Open Files, and click <strong>File</strong> > <strong>Connect to Server</strong>.</p>
+          <p>In the Server Address box, type <code>sftp://netid@mason.gmu.edu/home/netid</code> and click Connect. Remember to replace <em>netid</em> with your NetID (e.g., <em>ksarkhel</em> is my NetID).</p>
+        </section>
+        <section>
+          <h3 class="sectiontitle">Step 2. Basic HTML</h3>
+          <h4>Basic Structure of an HTML File</h4>
+          <h4>HTML Tags</h4>
+          <h4>Paragraphs</h4>
+          <h4>Breaking up your Content using Header Tags</h4>
+          <h4>Linking to Other Files</h4>
+          <h4>Lists</h4>
+          <div class="row">
+            <div class="col-md-3">
+              <img src="http://s3.amazonaws.com/lyah/list.png" />
+            </div>
+            <div class="col-md-9">
+              <p>Lists are a useful way to organize information. For example, you could put a list of classes you've taken or a shopping list on your webpage. You can either have an unordered list (just bullet points) or an ordered list (where each item is enumerated 1, 2, 3,&hellip; and so on). We'll start with unordered lists.</p>
+            </div>
+          </div>
+          <p>Start by adding the following code to your HTML file.</p>
+          <pre>&lt;ul&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Bred&lt;/li&gt;
+  &lt;li&gt;Egs&lt;/li&gt;
+  &lt;li&gt;A Dog&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          <p>The text between the <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code> tags are called the <b><u>l</u></b>ist <b><u>i</u></b>tem tags. The <code>&lt;ul&gt;</code> starts an <b><u>u</u></b>nordered <b><u>l</u></b>ist in which you can put list item tags. When you reload your browser, you should see the following:</p>
+          <ul>
+            <li>Milk</li>
+            <li>Bred</li>
+            <li>Egs</li>
+            <li>A Dog</li>
+          </ul>
+          <p>Try adding another list item that says <code>Hello, List!</code>.</p>
+          <p>Once you've done that, change the <code>&lt;ul&gt;</code> and <code>&lt;/ul&gt;</code> to <code>&lt;ol&gt;</code> and <code>&lt;/ol&lt;</code> respectively. Once you've done that it should look like this when you reload the browser.</p>
+          <ol>
+            <li>Milk</li>
+            <li>Bred</li>
+            <li>Egs</li>
+            <li>A Dog</li>
+            <li>Hello, List!</li>
+          </ol>
+          <p>If your browser doesn't look like this, make sure your code looks like the following:</p>
+          <pre>&lt;ul&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Bred&lt;/li&gt;
+  &lt;li&gt;Egs&lt;/li&gt;
+  &lt;li&gt;A Dog&lt;/li&gt;
+  &lt;li&gt;Hello, List!&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        </section>
+        <section>
+          <h3 class="sectiontitle">Step 3. Styling Your Content</h3>
+        </section>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://lou.wtf/cheet.js/bower_components/cheet.js/cheet.js"></script>
+    <script>
+      cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+        alert('You entered the Konami code!');
+      });
+    </script>
+  </body>
+</html>
