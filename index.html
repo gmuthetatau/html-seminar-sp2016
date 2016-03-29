@@ -38,6 +38,90 @@
           <p>In the Server Address box, type <code>sftp://netid@mason.gmu.edu/home/netid</code> and click Connect. Remember to replace <em>netid</em> with your NetID (e.g., <em>ksarkhel</em> is my NetID).</p>
         </section>
         <section>
+            <h3 class="sectiontitle">Step 1.5. Setting up your home directory</h3>
+            <p>Now that you're logged into your account on the Mason cluster,
+            we need to ensure that your home directory is set up properly to
+            host a web page.</p>
+
+            <p>In order to serve HTML files to your public webpage, Mason
+            relies on the existence of a directory named 'public_html' inside
+            your home directory. To create this directory, right click in the
+            Cyberduck window and select <strong>New Folder</strong>, then type
+            <code>public_html</code>.</p>
+
+            <!-- image here -->
+
+            <p>Within this directory you will place all the HTML files that you
+            want people to be able to see, including the ones we make during
+            this class. Let's go ahead and make a test homepage.</p>
+
+            <p>Open a basic text editor and create a new file (<u>notepad</u>
+            on Windows, <u>TextEdit</u> on Mac, or <u>gedit</u> on Linux). 
+            In this file, type whatever you want - keep it short for now, such
+            as your name, or a sentence. Then save the file with the name
+            <code>index.html</code>.</p>
+            
+            <p>
+            <em>On Windows, you must select <strong>File</strong> &gt;
+            <strong>Save As...</strong> and select 
+            <u>All Files (*)</u> from the drop-down list at the
+            bottom of the dialog box, then enter <strong>index.html</strong> as
+            the file name. <br />
+            On Mac using TextEdit, make sure <strong>File Format</strong> is
+            set to <strong>Web Page (.html)</strong> and enter
+            <code>index</code> in the <strong>Save As:</strong> field.<br />
+            <em>Failure to follow those steps may result in a file with a name
+            like <code>index.html.txt</code>, which will not work.</em>
+            </p>
+
+            <p>Now we're going to upload the file you made to your home
+            directory on Mason, inside the <code>public_html</code> directory
+            we made earlier. To do that, simply drag the file from wherever you
+            saved it on your local computer to inside your SFTP window,
+            ensuring it lands inside the <code>public_html</code> folder.</p>
+
+            <!-- image here -->
+
+            <p>Now let's open your internet browser and go to your Mason
+            webpage. The URL is <code>mason.gmu.edu/~netid</code> (where
+            <code>netid</code> is your GMU username - the same one you logged
+            in with earlier).</p>
+            
+            <hr />
+            <p>If you are setting up web access for the first time, you may
+            get an error page <strong>403 Forbidden</strong>:</p>
+
+            <!-- image here -->
+
+            <p>If this is the case, it is because the <code>public_html</code>
+            directory you created had its permissions set by default to
+            disallow others from viewing the files inside. To fix this in
+            Cyberduck, right-click on the <code>public_html</code> folder and
+            click <strong>Info</strong>. Then click the
+            <strong>Permissions</strong> tab at the top of the window. Your
+            permissions should be set to <em>Read</em>, <em>Write</em> and
+            <em>Execute</em> for <strong>Owner</strong>, and 
+            <em>Execute</em> for <strong>Group</strong> and
+            <strong>Others</strong>. The <em>Execute</em> permission flag
+            enables other people to list the files in your
+            <code>public_html</code> directory. You do NOT want <em>Write</em>
+            permissions for <strong>Group</strong> or <strong>Other</strong>;
+            otherwise, anyone would be able to modify your files!
+            To verify you have the correct permissions, check that the
+            <strong>Unix Permissions</strong> box reads <em>711</em> or
+            <em>755</em>.</p>
+            <hr />
+
+            <p>
+            Once you have the correct permissions, refresh the
+            page in your internet browser and you should see the sentence you
+            typed earlier into your <code>index.html</code> file.
+            Congratulations! You are now ready to make your own website on the
+            Mason cluster!
+            </p>
+
+        </section>
+        <section>
           <h3 class="sectiontitle">Step 2. Basic HTML</h3>
           <h4>Basic Structure of an HTML File</h4>
           <h4>HTML Tags</h4>
