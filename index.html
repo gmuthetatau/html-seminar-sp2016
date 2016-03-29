@@ -29,7 +29,7 @@
           </p>
         </section>
         <section>
-          <h3>Table of Contents</h3>
+          <h2>Table of Contents</h2>
           <ol>
             <li><a data-scroll href="#step1">Connect to the Mason server</a></li>
             <ol>
@@ -50,16 +50,16 @@
         </section>
         <hr />
         <section>
-          <h3 name="step1" id="step1" class="sectiontitle">Step 1. Connect to the Mason server</h3>
+          <h2 name="step1" id="step1" class="sectiontitle">Step 1. Connect to the Mason server</h2>
           <p>This is probably the hardest part of tonight. If you can get past this, the rest of this will be a breeze!</p>
           <p>When you visit a website, your browser downloads a special file called an "HTML" file and displays it. In this class, we will be creating these files and transfering them to the Mason server. Once you do this, you will be able to visit <a href="http://mason.gmu.edu/~{{netid}}/">http://mason.gmu.edu/~{{netid}}/</a> and see your webpage!</p>
           <p>So we need to start by learning how to transfer files to the Mason server.</p>
-          <h4 name="step1a" id="step1a">Step 1a. Microsoft Windows</h4>
+          <h3 name="step1a" id="step1a">Step 1a. Microsoft Windows</h3>
           <p>If you're using Microsoft Windows, you will need to download a
           program to transfer files to the Mason server. We suggest that you
           download and install <a href="https://cyberduck.io/">Cyberduck</a>.
           Then follow the instructions in Step 1b. </p>
-          <h4 name="step1b" id="step1b">Step 1b. Apple Macintosh OS X</h4>
+          <h3 name="step1b" id="step1b">Step 1b. Apple Macintosh OS X</h3>
           <p>If you're using Apple Macintosh OS X, you will need to download a
           program to transfer files to the Mason server. We suggest that you
           download and install <a href="https://cyberduck.io/">Cyberduck</a>.
@@ -71,7 +71,7 @@
           <p><img src="img/mac/1.jpg" class="img-responsive center-block" /></p>
           <p>Click <strong>Open Connection</strong>, and make sure <strong>SFTP (SSH File Transfer Protocol)</strong> is selected from the dropdown. In the box for <strong>Server</strong>, enter <code>mason.gmu.edu</code> and make sure the <strong>Port</strong> is 22. In the box labeled <strong>Username</strong>, enter '{{netid}}' without the single quotes. Enter your GMU Password in the box labeled <strong>Password</strong>. If you've forgotten your password, you can <a href="https://password.gmu.edu/">reset your Patriot Pass password</a>. Once you've verified that your information is correct, click <strong>Connect</strong>.</p>
           <p><img src="img/mac/2.jpg" class="img-responsive center-block" /></p>
-          <h4 name="step1c" id="step1c">Step 1c. Linux</h4>
+          <h3 name="step1c" id="step1c">Step 1c. Linux</h3>
           <p>If you're using Linux, you probably have everything you need already! Like OS X, the terminal programs <code>scp</code> and <code>sftp</code> are built-in and can perform the exact same functionality without an easy-to-use graphical interface. Unlike OS X however, the graphical interface is built in to most modern Linux distributions.</p>
           <p>Open Files, and click <strong>File</strong> > <strong>Connect to Server</strong>.</p>
           <p><img src="img/lin/1.png" class="img-responsive center-block" /></p>
@@ -92,7 +92,7 @@
           <p> If this doesn't work, try using <code>/home/<strong>u2</strong>/{{netid}}/</code>. Keep trying from <code>u1</code> all the way up through <code>u5</code>. This is because Mason uses a strange partition for user home directories&emdash;on a normal system, it should just be <code>/home/{{netid}}/</code>.) Once you don't get an error, you should see the files in your home directory&emdash;if this is your first time logging into the Mason cluster, keep in mind you that probably don't have any files yet.</p>
         </section>
         <section>
-            <h3 name="step15" id="step15" class="sectiontitle">Step 1.5. Setting up your home directory</h3>
+            <h2 name="step15" id="step15" class="sectiontitle">Step 1.5. Setting up your home directory</h2>
             <p>Now that you're logged into your account on the Mason cluster,
             we need to ensure that your home directory is set up properly to
             host a web page.</p>
@@ -144,9 +144,9 @@
             <p> Congratulations! You are now ready to make your own website on the Mason cluster!  </p>
         </section>
         <section>
-          <h3 name="step2" id="step2" class="sectiontitle">Step 2. Basic HTML</h3>
+          <h2 name="step2" id="step2" class="sectiontitle">Step 2. Basic HTML</h2>
           <p>Now we're ready to learn some basic HTML!</p>
-          <h4 name="step2a" id="step2a">Basic Structure of an HTML File</h4>
+          <h3 name="step2a" id="step2a">Basic Structure of an HTML File</h3>
           <p>Before we learn about writing HTML, we need to learn the structure of an HTML document.</p>
           <p>A typical HTML document has the following structure<pre>&lt;!doctype html&gt;
 &lt;html&gt;
@@ -159,13 +159,35 @@
 &lt;/html&gt;</pre></p>
           <p>It is composed of the <code>doctype</code> (the <strong>doc</strong>ument <strong>type</strong>), the <code>&lt;head&gt;</code> (which contains the <code>&lt;title&gt;</code> of your page), and the <code>&lt;body&gt;</code> (which contains your content).</p>
           <p>In order to change the title of the page, you will change the text reading <code>Your title goes here</code>. For the rest of this tutorial, we will be changing the text in between the <code>&lt;body&gt;</code> tags. What are HTML tags you say? We'll see in the next section!</p>
-          <h4 name="step2b" id="step2b">HTML Tags</h4>
+          <h3 name="step2b" id="step2b">HTML Tags</h3>
           <p>HTML, or <strong><u>H</u></strong>yper<strong><u>t</u></strong>ext <strong><u>M</u></strong>arkup <strong><u>L</u></strong>language, is composed of text and <em>tags</em>. HTML tags start with a <code>&lt;</code> and end with a <code>&gt;</code>. Most HTML Tags are also ended by the same thing starting with a <code>&lt;/</code> and a <code>&gt;</code>. For example, the <code>body</code> tag is opened by a <code>&lt;body&gt;</code> and closed by a <code>&lt;/body&gt;</code>. In between these two tags, you place content (which we will do soon).</p>
-          <div class="alert alert-warning" role="alert"><strong>Warning!</strong> Always remember to close your tags. If you start a tag like <code>&lt;p&gt;</code>, you must rememeber to close it using <code>&lt;/p&gt;</p> later. If you don't, there will be many problems.</div>
-          <h4 name="step2c" id="step2c">Paragraphs</h4>
-          <h4 name="step2d" id="step2d">Breaking up your Content using Header Tags</h4>
-          <h4 name="step2e" id="step2e">Linking to Other Files</h4>
-          <h4 name="step2f" id="step2f">Lists</h4>
+          <div class="alert alert-warning" role="alert"><strong>Warning!</strong> Always remember to close your tags. If you start a tag like <code>&lt;p&gt;</code>, you must rememeber to close it using <code>&lt;/p&gt;</code> later. If you don't, there will be many problems.</div>
+          <h3 name="step2c" id="step2c">Paragraphs</h3>
+          <p>The <code>&lt;p&gt;</code> tag we were just talking about is called the <strong><u>p</u></strong>aragraph tag. Type the following into your <code>index.html</code> file.<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Your title goes here&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        This is not in a paragraph.
+        &lt;p&gt;This is in a paragraph!&lt;/p&gt;
+        &lt;p&gt;This is another paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></p>
+          <p>If you look at this in your browser, you should see the following.</p>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2">
+              This is not in a paragraph.
+              <p>This is in a paragraph!</p>
+              <p>This is another paragraph.</p>
+            </div>
+          </div>
+          <p>As you can see, we can have more than one paragraph, and you can have text outside of <code>&lt;p&gt;</code> tag.</p>
+          <p>Try addding a few more paragraphs for fun!</p>
+          <h3 name="step2d" id="step2d">Breaking up your Content using Header Tags</h3>
+          <h3 name="step2e" id="step2e">Linking to Other Files</h3>
+          <h3 name="step2f" id="step2f">Lists</h3>
           <div class="row">
             <div class="col-md-3">
               <img src="http://s3.amazonaws.com/lyah/list.png" />
@@ -207,7 +229,7 @@
 &lt;/ul&gt;</pre>
         </section>
         <section>
-          <h3 class="sectiontitle">Step 3. Styling Your Content</h3>
+          <h2 class="sectiontitle">Step 3. Styling Your Content</h2>
         </section>
       </div>
     </div>
